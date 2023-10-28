@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            font-family: 'Poppins';
+            position: relative;
+        }
+
+        .all-container{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: 360px;
+            padding: 50px;
+            padding-bottom: 80px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px gray;
+        }
+
+        .login-form{
+            text-align: center;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: black;
+            color: white;
+            margin-bottom: 16px;
+            border-radius: 4px;
+        }
+
+        #username{
+            padding: 8px;
+            width: 340px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid black;
+        }
+
+        #password{
+            margin-top: 6px;
+            padding: 8px;
+            width: 340px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid black;
+        }
+
+        .login{
+            margin-top: 16px;
+        }
+
+        #login-btn{
+            padding: 8px;
+            font-size: 16px;
+            background-color: green;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            position: absolute;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            width: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #login-btn:hover{
+            background-color: white;
+            color: black;
+            border: 2px solid green;
+        }
+
+        #login-btn:active{
+            box-shadow: 2px 2px 4px gray;
+        }
+    </style>
+</head>
+<body style="padding-top: 100px;">
+    <div class="all-container">
+        <div class="login-form">
+            Login Form
+        </div>
+        <div id="form">
+            <div>
+                <span class="username">Username</span>
+                <form action="" method="post">
+                    <input type="text" id="username" placeholder="*username">
+                </form>
+            </div>
+            <div>
+                <span class="password">Password</span>
+                <form action="" method="post">
+                    <input type="password" id="password" placeholder="*password">
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="login">
+            <button id="login-btn" onclick="prosesLogin()">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function prosesLogin() {
+            var username = document.getElementById('username').value; // get the input field element by its ID
+            var password = document.getElementById('password').value; // get the input field element by its ID
+
+            if (username == "Fahmi" && password == "fahmi377") {
+                alert("Selamat, Login berhasil!")
+            } else {
+                alert("Masukkan Username dan Password dengan benar!")
+            }
+        }
+    </script>
+</body>
+</html>

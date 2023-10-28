@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Lagu</title>
+    <style>
+        *{
+            font-family: 'Poppins';
+        }
+
+        body{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            padding-top: 50px;
+        }
+
+        .all-container{
+            display: inline-block;
+            box-shadow: 1px 1px 8px gray;
+            padding: 45px;
+        }
+
+        .head{
+            display: inline-block;
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 17px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .head:hover{
+            transform: scale(1.1);
+        }
+
+        .gambar-musik{
+            margin-top: 20px;
+        }
+
+        .gambar-musik img {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 8px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gambar-musik img:hover{
+            transform: scale(1.05);
+        }
+
+        .info-lagu{
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .info-lagu span{
+            font-size: 18px;
+        }
+
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .button button, #pause.btn{
+            padding: 10px;
+            width: 80px;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: solid 1px transparent;
+        }
+
+        #play-btn{
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        #play-btn:hover, #pause-btn:hover, #reset-btn:hover{
+            transform: scale(1.05);
+        }
+
+        #play-btn:active, #pause-btn:active, #reset-btn:active{
+            box-shadow: 1px 1px 8px gray;
+        }
+
+        #pause-btn{
+            background-color: yellow;
+            color: black;
+            border: solid 1px gray;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        #reset-btn{
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+<body>  
+    <div class="all-container">
+        <div class="head">
+            <span class="header">Play List with Javascript</span>
+        </div>
+        <div class="gambar-musik">
+            <img src="./thenightwemet.jpg" alt="The Night We Met">
+        </div>
+        <div class="info-lagu">
+            <span>Lord Huron - The Night We Met</span>
+        </div>
+        <div class="audio-player">
+            <audio id="music-player" controls>
+                <source src="./Y2meta.app - Lord Huron - The Night We Met (Official Audio)-(1080p).mp4" type="audio/mpeg">
+            </audio>
+        </div>
+        <div class="button">
+            <button id="play-btn">Play</button>
+            <button id="pause-btn">Pause</button>
+            <button id="reset-btn">Replay</button>
+        </div>
+    </div>
+
+    <script>
+        const playBtn = document.getElementById('play-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const musicPlayer = document.getElementById("music-player");
+
+        playBtn.addEventListener("click", function () {
+            musicPlayer.play();
+        });
+
+        pauseBtn.addEventListener("click", function () {
+            musicPlayer.pause();
+        });
+
+        resetBtn.addEventListener("click", function () {
+            musicPlayer.currentTime = 0;
+        })
+    </script>
+</body>
+</html>
